@@ -48,12 +48,15 @@ import { Component } from '@angular/core';
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
   name: string;
-  age: number;
 }
 
 @Component({
   selector: 'app-root',
-  template: `{{ (person | as: Person).name }}`,
+  template: `
+  <ng-container *ngTemplateOutlet="personTemplate; context: person"></ng-container>
+
+  <ng-template #personTemplate let-person><span>Hello {{ (person | as: Person).name }}!</span></ng-template>
+  `,
 })
 export class AppComponent {
 
@@ -61,7 +64,7 @@ export class AppComponent {
   // you will need to add a non-null assertion (!)
   public Person!: Person; // publish your interface into html template
 
-  person: any = { name: 'Simone', age: 18 }; // the unknown data type
+  person: Person = { name: 'Simone' }; // the data
   
 }
 ```
