@@ -55,7 +55,9 @@ interface Person {
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: person"></ng-container>
 
-  <ng-template #personTemplate let-person><span>Hello {{ (person | as: Person).name }}!</span></ng-template>
+  <ng-template #personTemplate let-person>
+    <span>Hello {{ (person | as: Person).name }}!</span>
+  </ng-template>
   `,
 })
 export class AppComponent {
