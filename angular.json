@@ -1,0 +1,163 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng-as": {
+      "projectType": "library",
+      "root": "projects/ng-as",
+      "sourceRoot": "projects/ng-as/src",
+      "prefix": "ng",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng-as/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-as/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-as/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-as/src/test.ts",
+            "tsConfig": "projects/ng-as/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-as/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-as/**/*.ts",
+              "projects/ng-as/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "ng-as-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ng-as-demo",
+      "sourceRoot": "projects/ng-as-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-as-demo",
+            "index": "projects/ng-as-demo/src/index.html",
+            "main": "projects/ng-as-demo/src/main.ts",
+            "polyfills": "projects/ng-as-demo/src/polyfills.ts",
+            "tsConfig": "projects/ng-as-demo/tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/ng-as-demo/src/favicon.ico",
+              "projects/ng-as-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ng-as-demo/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-as-demo:build:production"
+            },
+            "development": {
+              "browserTarget": "ng-as-demo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-as-demochio:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-as-demo/src/test.ts",
+            "polyfills": "projects/ng-as-demo/src/polyfills.ts",
+            "tsConfig": "projects/ng-as-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-as-demo/karma.conf.js",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/ng-as-demo/src/favicon.ico",
+              "projects/ng-as-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ng-as-demo/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-as-demo/**/*.ts",
+              "projects/ng-as-demo/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-as",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
+}

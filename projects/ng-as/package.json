@@ -1,0 +1,25 @@
+{
+  "name": "ng-as",
+  "version": "13.0.0",
+  "description": "Angular pipe for type casting template variables.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nigrosimone/ng-as.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Simone Nigro <nigro.simone@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nigrosimone/ng-as/issues"
+  },
+  "homepage": "https://github.com/nigrosimone/ng-as",
+  "peerDependencies": {
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
