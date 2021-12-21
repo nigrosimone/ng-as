@@ -53,7 +53,7 @@ interface Person {
 @Component({
   selector: 'app-root',
   template: `
-  <ng-container *ngTemplateOutlet="personTemplate; context: person"></ng-container>
+  <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
 
   <ng-template #personTemplate let-person>
     <span>Hello {{ (person | as: Person).name }}!</span>

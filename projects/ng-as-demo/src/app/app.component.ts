@@ -9,9 +9,11 @@ interface Person {
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'app-root',
   template: `
-  <ng-container *ngTemplateOutlet="personTemplate; context: person"></ng-container>
+  <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
 
-  <ng-template #personTemplate let-person><span>Hello {{ (person | as: Person).name }}!</span></ng-template>
+  <ng-template #personTemplate let-person>
+    <span>Hello {{ (person | as: Person).name }}!</span>
+  </ng-template>
   `,
 })
 export class AppComponent {
