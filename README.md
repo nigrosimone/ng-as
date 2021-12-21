@@ -23,6 +23,7 @@ npm i ng-as
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 
 import { NgAsModule } from 'ng-as';
@@ -31,6 +32,7 @@ import { NgAsModule } from 'ng-as';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     NgAsModule,
   ],
   providers: [],
