@@ -1,6 +1,6 @@
 {
   "name": "ng-as",
-  "version": "13.0.3",
+  "version": "13.0.4",
   "description": "Angular pipe for type casting template variables.",
   "repository": {
     "type": "git",
