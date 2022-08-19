@@ -1,6 +1,7 @@
 
 import { NgAsModule } from './ng-as.module';
 import { NgAsPipe } from './ng-as.pipe';
+import { ngAs } from './ng-as.utils';
 
 interface Test {
     x: boolean;
@@ -11,6 +12,7 @@ describe('NgAsPipe', () => {
         let Test!: Test;
         const pipe = new NgAsPipe();
         expect(pipe.transform({x: true}, Test)).toEqual({x: true});
+        expect(ngAs({x: true}, Test)).toEqual({x: true});
     });
 });
 
