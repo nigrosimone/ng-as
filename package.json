@@ -1,7 +1,7 @@
 {
   "name": "ng-as",
   "version": "14.0.2",
-  "description": "Angular pipe for type casting template variables.",
+  "description": "Angular pipe and directive for type casting template variables.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nigrosimone/ng-as.git"
