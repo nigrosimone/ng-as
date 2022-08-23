@@ -10,19 +10,19 @@ interface Person {
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'app-root',
   template: `
-  <ng-container *ngTemplateOutlet="personTemplate1; context: {$implicit: person}"></ng-container>
-  <ng-container *ngTemplateOutlet="personTemplate2; context: {$implicit: person}"></ng-container>
-  <ng-container *ngTemplateOutlet="personTemplate3; context: {$implicit: person}"></ng-container>
+  <ng-container *ngTemplateOutlet="pipeTemplate; context: {$implicit: person}"></ng-container>
+  <ng-container *ngTemplateOutlet="methodTemplate; context: {$implicit: person}"></ng-container>
+  <ng-container *ngTemplateOutlet="directiveTemplate; context: {$implicit: person}"></ng-container>
 
-  <ng-template #personTemplate1 let-person>
+  <ng-template #pipeTemplate let-person>
     <p>Hello {{ (person | as: Person).name }}!</p>
   </ng-template>
 
-  <ng-template #personTemplate2 let-person>
+  <ng-template #methodTemplate let-person>
     <p>Hello {{ $ngAs(person, Person).name }}!</p>
   </ng-template>
 
-  <ng-template #personTemplate3 [ngAs]="Person" let-person>
+  <ng-template #directiveTemplate [ngAs]="Person" let-person>
     <p>Hello {{ person.name }}!</p>
   </ng-template>
   `,
