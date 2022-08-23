@@ -13,6 +13,7 @@ interface Person {
   <ng-container *ngTemplateOutlet="pipeTemplate; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="methodTemplate; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="directiveTemplate; context: {$implicit: person}"></ng-container>
+  <ng-container *ngTemplateOutlet="noCastTemplate; context: {$implicit: person}"></ng-container>
 
   <ng-template #pipeTemplate let-person>
     <p>Hello {{ (person | as: Person).name }}!</p>
@@ -23,6 +24,10 @@ interface Person {
   </ng-template>
 
   <ng-template #directiveTemplate [ngAs]="Person" let-person>
+    <p>Hello {{ person.name }}!</p>
+  </ng-template>
+
+  <ng-template #noCastTemplate let-person>
     <p>Hello {{ person.name }}!</p>
   </ng-template>
   `,
