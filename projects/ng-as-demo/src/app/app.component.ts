@@ -12,6 +12,7 @@ interface Person {
   template: `
   <ng-container *ngTemplateOutlet="personTemplate1; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="personTemplate2; context: {$implicit: person}"></ng-container>
+  <ng-container *ngTemplateOutlet="personTemplate3; context: {$implicit: person}"></ng-container>
 
   <ng-template #personTemplate1 let-person>
     <p>Hello {{ (person | as: Person).name }}!</p>
@@ -19,6 +20,10 @@ interface Person {
 
   <ng-template #personTemplate2 let-person>
     <p>Hello {{ $ngAs(person, Person).name }}!</p>
+  </ng-template>
+
+  <ng-template #personTemplate3 [ngAs]="Person" let-person>
+    <p>Hello {{ person.name }}!</p>
   </ng-template>
   `,
 })
