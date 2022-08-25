@@ -22,13 +22,13 @@ describe('NgAsPipe', () => {
 describe('NgAsMethod', () => {
     it('ngAs', () => {
         let Test!: Test;
-        expect(ngAs({ x: true }, Test)).toEqual({ x: true });
+        expect(ngAs<Test>({ x: true }, Test)).toEqual({ x: true });
     });
 });
 
 @Component({
     template: `<ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
-    <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>` 
+    <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>`
 })
 class TestComponent {
     public Test!: Test;
@@ -59,12 +59,15 @@ describe('NgAsDirective', () => {
     });
 
     it('ngTemplateContextGuard', () => {
-        expect(NgAsDirective.ngTemplateContextGuard(null as any, null)).toBeTrue();
+        expect(NgAsDirective.ngTemplateContextGuard<Test>(null as any, {
+            ngAs: { x: true },
+            $implicit: { x: true }
+        })).toBeTrue();
     });
 });
 
 describe('NgAsModule', () => {
-    it('should create NgAsModule', () => {
+    it('should create', () => {
         expect(new NgAsModule()).toBeTruthy();
     });
 });
