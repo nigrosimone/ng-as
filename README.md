@@ -5,7 +5,7 @@ Angular pipe and directive for type casting template variables.
 ## Description
 
 Sometime there is a need to cast variable into component template as some type. 
-This pipe type casting template variables and improve IDE suggestion and refactoring.
+This library has pipe and directive for type casting template variables and improve IDE suggestion and refactoring.
 
 See the [stackblitz demo](https://stackblitz.com/edit/demo-ng-as?file=src%2Fapp%2Fapp.component.ts).
 
@@ -42,9 +42,9 @@ import { NgAsModule } from 'ng-as';
 export class AppModule { }
 ```
 
-*Step 3*: usage: 
+*Step 3*: usage
 
-The directirve eg.:
+type casting template variables with directirve eg.:
 
 ```ts
 import { Component } from '@angular/core';
@@ -65,17 +65,14 @@ interface Person {
   `,
 })
 export class AppComponent {
-
   // NOTE: If you have "strictPropertyInitialization" enabled, 
   // you will need to add a non-null assertion (!)
   public Person!: Person; // publish your interface into html template
-
   person: Person = { name: 'Simone' }; // the data
-  
 }
 ```
 
-The pipe eg.:
+type casting template variables with pipe eg.:
 
 ```ts
 import { Component } from '@angular/core';
@@ -96,13 +93,10 @@ interface Person {
   `,
 })
 export class AppComponent {
-
   // NOTE: If you have "strictPropertyInitialization" enabled, 
   // you will need to add a non-null assertion (!)
   public Person!: Person; // publish your interface into html template
-
   person: Person = { name: 'Simone' }; // the data
-  
 }
 ```
 
