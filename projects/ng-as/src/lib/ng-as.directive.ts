@@ -1,6 +1,7 @@
 import { Directive, Input } from "@angular/core";
 
 interface NgAsContext<T> {
+  [key: string]: unknown;
   ngAs: T;
   $implicit: T;
 }
