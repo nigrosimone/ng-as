@@ -15,6 +15,7 @@ export class NgAsDirective<T> {
    * The presence of this method is a signal to the Ivy template type-check compiler that the
    * `ngAs` structural directive renders its template with a specific context type.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static ngTemplateContextGuard<T>(dir: NgAsDirective<T>, ctx: any): ctx is NgAsContext<T> {
       return true;
   }

@@ -59,6 +59,7 @@ describe('NgAsDirective', () => {
     });
 
     it('ngTemplateContextGuard', () => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         expect(NgAsDirective.ngTemplateContextGuard<Test>(null as any, {
             ngAs: { x: true },
             $implicit: { x: true }
