@@ -5,18 +5,50 @@ interface NgAsContext<T> {
   $implicit: T;
 }
 
-@Directive({ selector: '[ngAs]' })
+/**
+ * @description
+ *
+ * The `ngAs` directive it's a Angular directive for type casting template variables.
+ *
+ * @usageNotes
+ *
+ * ### Usage
+ *
+ * ```html
+ * <ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
+ * <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>
+ * ```
+ */
+@Directive({ selector: '[ngAs]', standalone: true })
 export class NgAsDirective<T> {
-  @Input() ngAs!: T;
 
   /**
-   * Asserts the correct type of the context for the template that `ngAs` will render.
+   * @description
+   *
+   * The `ngAs` directive it's a Angular directive for type casting template variables.
+   *
+   * @usageNotes
+   *
+   * ### Usage
+   *
+   * ```html
+   * <ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
+   * <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>
+   * ```
+   */
+  @Input() ngAs!: T;
+
+
+  /**
+   * Asserts the correct type of the context for the template that `NgAs` will render.
    *
    * The presence of this method is a signal to the Ivy template type-check compiler that the
-   * `ngAs` structural directive renders its template with a specific context type.
+   * `NgAs` structural directive renders its template with a specific context type.
+   * 
+   * @see https://angular.dev/guide/directives/structural-directives#typing-the-directives-context
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static ngTemplateContextGuard<T>(dir: NgAsDirective<T>, ctx: any): ctx is NgAsContext<T> {
-      return true;
+    return true;
   }
 }

@@ -18,36 +18,13 @@ See the [stackblitz demo](https://stackblitz.com/edit/demo-ng-as?file=src%2Fapp%
 npm i ng-as
 ```
 
-*Step 2*: Import `NgAsModule` into your app module, eg.:
+*Step 2*: usage
 
-```ts
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AppComponent } from './app.component';
-
-import { NgAsModule } from 'ng-as';
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    NgAsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  ],
-})
-export class AppModule { }
-```
-
-*Step 3*: usage
-
-type casting template variables with directirve eg.:
+type casting template variables with directive eg.:
 
 ```ts
 import { Component } from '@angular/core';
+import { NgAsModule } from 'ng-as';
 
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
@@ -56,6 +33,8 @@ interface Person {
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [NgAsModule],
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
 
@@ -76,6 +55,7 @@ type casting template variables with pipe eg.:
 
 ```ts
 import { Component } from '@angular/core';
+import { NgAsModule } from 'ng-as';
 
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
@@ -84,6 +64,8 @@ interface Person {
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [NgAsModule],
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
 
@@ -109,7 +91,8 @@ export class AppComponent {
 `matCellDef` cannot infer the type of its parent's input. But with `ng-as` you can strong-type its template variable.
 
 ```ts
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { NgAsModule } from 'ng-as';
 
 export interface PeriodicElement {
   name: string;
@@ -133,6 +116,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'table-basic-example',
+  standalone: true,
+  imports: [NgAsModule],
   template: `
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
