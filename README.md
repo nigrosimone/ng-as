@@ -33,7 +33,6 @@ interface Person {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [NgAsDirective],
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
@@ -64,7 +63,6 @@ interface Person {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [NgAsPipe],
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
@@ -116,7 +114,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'table-basic-example',
-  standalone: true,
   imports: [NgAsPipe],
   template: `
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
