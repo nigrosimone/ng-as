@@ -90,6 +90,7 @@ export class AppComponent {
 
 ```ts
 import { Component } from '@angular/core';
+import {MatTableModule} from '@angular/material/table';
 import { NgAsPipe } from 'ng-as';
 
 export interface PeriodicElement {
@@ -114,7 +115,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'table-basic-example',
-  imports: [NgAsPipe],
+  imports: [NgAsPipe, MatTableModule],
   template: `
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
