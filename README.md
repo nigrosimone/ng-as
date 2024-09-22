@@ -24,7 +24,7 @@ type casting template variables with directive eg.:
 
 ```ts
 import { Component } from '@angular/core';
-import { NgAsModule } from 'ng-as';
+import { NgAsDirective } from 'ng-as';
 
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
@@ -34,7 +34,7 @@ interface Person {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgAsModule],
+  imports: [NgAsDirective],
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
 
@@ -55,7 +55,7 @@ type casting template variables with pipe eg.:
 
 ```ts
 import { Component } from '@angular/core';
-import { NgAsModule } from 'ng-as';
+import { NgAsPipe } from 'ng-as';
 
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
@@ -65,7 +65,7 @@ interface Person {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgAsModule],
+  imports: [NgAsPipe],
   template: `
   <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
 
@@ -92,7 +92,7 @@ export class AppComponent {
 
 ```ts
 import { Component } from '@angular/core';
-import { NgAsModule } from 'ng-as';
+import { NgAsPipe } from 'ng-as';
 
 export interface PeriodicElement {
   name: string;
@@ -117,7 +117,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'table-basic-example',
   standalone: true,
-  imports: [NgAsModule],
+  imports: [NgAsPipe],
   template: `
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
