@@ -7,9 +7,9 @@ interface Person {
 }
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'app-root',
-  template: `
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'app-root',
+    template: `
   <ng-container *ngTemplateOutlet="pipeTemplate; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="methodTemplate; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="directiveTemplate; context: {$implicit: person}"></ng-container>
@@ -31,6 +31,7 @@ interface Person {
     <p>Hello {{ person.name }}!</p>
   </ng-template>
   `,
+    standalone: false
 })
 export class AppComponent {
 

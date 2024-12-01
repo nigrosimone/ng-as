@@ -16,7 +16,6 @@ describe('NgAsDirective', () => {
         @Component({
             template: `<ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
             <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>`,
-            standalone: true,
             imports: [NgAsModule, CommonModule]
         })
         class TestComponent {
@@ -32,7 +31,6 @@ describe('NgAsDirective', () => {
         @Component({
             template: `<ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
             <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>`,
-            standalone: true,
             imports: [NgAsDirective, CommonModule]
         })
         class TestComponent {
@@ -48,7 +46,6 @@ describe('NgAsDirective', () => {
         @Component({
             template: `<ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
             <ng-template #testTemplate let-test><div>{{(test | as:Test).x}}</div></ng-template>`,
-            standalone: true,
             imports: [NgAsModule, CommonModule]
         })
         class TestComponent {
@@ -64,7 +61,6 @@ describe('NgAsDirective', () => {
         @Component({
             template: `<ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
             <ng-template #testTemplate let-test><div>{{(test | as:Test).x}}</div></ng-template>`,
-            standalone: true,
             imports: [NgAsPipe, CommonModule]
         })
         class TestComponent {
