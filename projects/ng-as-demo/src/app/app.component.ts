@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ngAs } from 'projects/ng-as/src/public-api';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ngAs, NgAsDirective, NgAsPipe } from 'projects/ng-as/src/public-api';
 
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
@@ -7,9 +8,9 @@ interface Person {
 }
 
 @Component({
-    // eslint-disable-next-line @angular-eslint/component-selector
-    selector: 'app-root',
-    template: `
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'app-root',
+  template: `
   <ng-container *ngTemplateOutlet="pipeTemplate; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="methodTemplate; context: {$implicit: person}"></ng-container>
   <ng-container *ngTemplateOutlet="directiveTemplate; context: {$implicit: person}"></ng-container>
@@ -31,7 +32,11 @@ interface Person {
     <p>Hello {{ person.name }}!</p>
   </ng-template>
   `,
-    standalone: false
+  imports: [
+    CommonModule,
+    NgAsDirective, NgAsPipe,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
 
@@ -40,6 +45,6 @@ export class AppComponent {
   public Person!: Person; // publish your interface into html template
 
   person: Person = { name: 'Simone' }; // the unknown data type
-  
+
   public readonly $ngAs = ngAs;
 }
