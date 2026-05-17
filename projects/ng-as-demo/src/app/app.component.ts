@@ -1,4 +1,5 @@
-import { CommonModule } from '@angular/common';
+
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ngAs, NgAsDirective, NgAsPipe } from 'projects/ng-as/src/public-api';
 
@@ -33,7 +34,7 @@ interface Person {
   </ng-template>
   `,
   imports: [
-    CommonModule,
+    NgTemplateOutlet,
     NgAsDirective, NgAsPipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
