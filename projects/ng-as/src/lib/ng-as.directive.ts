@@ -36,7 +36,7 @@ export class NgAsDirective<T> {
    * <ng-template #testTemplate [ngAs]="Test" let-test><div>{{test.x}}</div></ng-template>
    * ```
    */
-  @Input() ngAs!: T;
+  @Input({ required: true }) ngAs!: T;
 
 
   /**
@@ -47,8 +47,7 @@ export class NgAsDirective<T> {
    * 
    * @see https://angular.dev/guide/directives/structural-directives#typing-the-directives-context
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static ngTemplateContextGuard<T>(dir: NgAsDirective<T>, ctx: any): ctx is NgAsContext<T> {
+  static ngTemplateContextGuard<T>(dir: NgAsDirective<T>, ctx: unknown): ctx is NgAsContext<T> {
     return true;
   }
 }
