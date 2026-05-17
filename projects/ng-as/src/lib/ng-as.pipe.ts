@@ -16,7 +16,7 @@ import { Pipe, PipeTransform } from "@angular/core";
    */
 @Pipe({ name: 'as', pure: true, standalone: true })
 export class NgAsPipe implements PipeTransform {
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   transform<T>(input: unknown, _baseItem: T | undefined): T {
     return input as unknown as T;
   }
