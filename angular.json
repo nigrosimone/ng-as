@@ -126,7 +126,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "projects/ng-as-demo/src/test.ts",
-            "polyfills": "projects/ng-as-demo/src/polyfills.ts",
+            "polyfills": ["projects/ng-as-demo/src/polyfills.ts"],
             "tsConfig": "projects/ng-as-demo/tsconfig.spec.json",
             "karmaConfig": "projects/ng-as-demo/karma.conf.js",
             "inlineStyleLanguage": "sass",
