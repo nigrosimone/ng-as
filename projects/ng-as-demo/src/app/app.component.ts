@@ -1,7 +1,7 @@
 
 import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ngAs, NgAsDirective, NgAsPipe } from 'projects/ng-as/src/public-api';
+import { ngAs, NgAsDirective, NgAsPipe } from 'ng-as';
 
 // your interface, but also work with any typescript type (class, type, etc.)
 interface Person {
