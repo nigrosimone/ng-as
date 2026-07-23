@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
-import { NgAsPipe } from './ng-as.pipe';
+import { NgAsAliasPipe, NgAsPipe } from './ng-as.pipe';
 import { NgAsModule } from './ng-as.module';
 
 interface Test {
@@ -100,5 +100,56 @@ describe('NgAsPipe', () => {
 
     expect(transform.mock.calls.length).toBe(afterFirstRender);
     transform.mockRestore();
+  });
+});
+
+describe('NgAsAliasPipe', () => {
+  it('renders under the prefixed `ngAs` name', () => {
+    @Component({
+      template: `<ng-container
+          *ngTemplateOutlet="testTemplate; context: { $implicit: test }"
+        ></ng-container>
+        <ng-template #testTemplate let-test
+          ><div>{{ (test | ngAs: Test).x }}</div></ng-template
+        >`,
+      imports: [NgAsAliasPipe, NgTemplateOutlet],
+    })
+    class TestComponent {
+      public Test!: Test;
+      test: Test = { x: true };
+    }
+
+    const fixture = TestBed.createComponent(TestComponent);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toBe('true');
+  });
+
+  it('is reachable through the module too, alongside `as`', () => {
+    @Component({
+      template: `<ng-container
+          *ngTemplateOutlet="testTemplate; context: { $implicit: test }"
+        ></ng-container>
+        <ng-template #testTemplate let-test
+          ><span>{{ (test | as: Test).x }}</span
+          ><span>{{ (test | ngAs: Test).x }}</span></ng-template
+        >`,
+      imports: [NgAsModule, NgTemplateOutlet],
+    })
+    class TestComponent {
+      public Test!: Test;
+      test: Test = { x: true };
+    }
+
+    const fixture = TestBed.createComponent(TestComponent);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toBe('truetrue');
+  });
+
+  it('behaves exactly like the pipe it aliases', () => {
+    const alias = new NgAsAliasPipe();
+    const source = { x: true };
+
+    expect(alias).toBeInstanceOf(NgAsPipe);
+    expect(alias.transform<Test>(source, undefined)).toBe(source);
   });
 });
