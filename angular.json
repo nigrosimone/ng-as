@@ -25,20 +25,18 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "projects/ng-as/src/test.ts",
             "tsConfig": "projects/ng-as/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-as/karma.conf.js"
+            "runner": "vitest",
+            "include": ["**/*.spec.ts"],
+            "coverageReporters": ["html", "lcovonly", "text-summary"]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "projects/ng-as/**/*.ts",
-              "projects/ng-as/**/*.html"
-            ]
+            "lintFilePatterns": ["projects/ng-as/**/*.ts", "projects/ng-as/**/*.html"]
           }
         }
       }
@@ -64,18 +62,10 @@
               "base": "dist/ng-as-demo"
             },
             "index": "projects/ng-as-demo/src/index.html",
-            "polyfills": [
-              "projects/ng-as-demo/src/polyfills.ts"
-            ],
             "tsConfig": "projects/ng-as-demo/tsconfig.app.json",
             "inlineStyleLanguage": "sass",
-            "assets": [
-              "projects/ng-as-demo/src/favicon.ico",
-              "projects/ng-as-demo/src/assets"
-            ],
-            "styles": [
-              "projects/ng-as-demo/src/styles.sass"
-            ],
+            "assets": ["projects/ng-as-demo/src/favicon.ico", "projects/ng-as-demo/src/assets"],
+            "styles": ["projects/ng-as-demo/src/styles.sass"],
             "scripts": [],
             "browser": "projects/ng-as-demo/src/main.ts"
           },
@@ -100,6 +90,11 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "testing": {
+              "aot": false,
+              "optimization": false,
+              "extractLicenses": false
             }
           },
           "defaultConfiguration": "production"
@@ -119,43 +114,29 @@
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",
           "options": {
-            "buildTarget": "ng-as-demochio:build"
+            "buildTarget": "ng-as-demo:build"
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "projects/ng-as-demo/src/test.ts",
-            "polyfills": ["projects/ng-as-demo/src/polyfills.ts"],
             "tsConfig": "projects/ng-as-demo/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-as-demo/karma.conf.js",
-            "inlineStyleLanguage": "sass",
-            "assets": [
-              "projects/ng-as-demo/src/favicon.ico",
-              "projects/ng-as-demo/src/assets"
-            ],
-            "styles": [
-              "projects/ng-as-demo/src/styles.sass"
-            ],
-            "scripts": []
+            "buildTarget": ":build:testing",
+            "runner": "vitest",
+            "coverageReporters": ["html", "lcovonly", "text-summary"]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "projects/ng-as-demo/**/*.ts",
-              "projects/ng-as-demo/**/*.html"
-            ]
+            "lintFilePatterns": ["projects/ng-as-demo/**/*.ts", "projects/ng-as-demo/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   },
   "schematics": {
     "@schematics/angular:component": {

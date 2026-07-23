@@ -1,4 +1,4 @@
-# NgAs [![Build Status](https://app.travis-ci.com/nigrosimone/ng-as.svg?branch=main)](https://app.travis-ci.com/nigrosimone/ng-as) [![Coverage Status](https://coveralls.io/repos/github/nigrosimone/ng-as/badge.svg?branch=main)](https://coveralls.io/github/nigrosimone/ng-as?branch=main) [![NPM version](https://img.shields.io/npm/v/ng-as.svg)](https://www.npmjs.com/package/ng-as)
+# NgAs [![Build Status](https://github.com/nigrosimone/ng-as/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/nigrosimone/ng-as/actions/workflows/node.js.yml) [![NPM version](https://img.shields.io/npm/v/ng-as.svg)](https://www.npmjs.com/package/ng-as)
 
 Angular pipe and directive for type casting template variables.
 
@@ -77,6 +77,37 @@ export class AppComponent {
   // you will need to add a non-null assertion (!)
   public Person!: Person; // publish your interface into html template
   person: Person = { name: 'Simone' }; // the data
+}
+```
+
+type casting template variables with the plain `ngAs()` function eg. (nothing to import into `imports`):
+
+```ts
+import { Component } from '@angular/core';
+import { ngAs } from 'ng-as';
+
+// your interface, but also work with any typescript type (class, type, etc.)
+interface Person {
+  name: string;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+  <ng-container *ngTemplateOutlet="personTemplate; context: {$implicit: person}"></ng-container>
+
+  <ng-template #personTemplate let-person>
+    <span>Hello {{ $ngAs(person, Person).name }}!</span>
+  </ng-template>
+  `,
+})
+export class AppComponent {
+  // NOTE: If you have "strictPropertyInitialization" enabled, 
+  // you will need to add a non-null assertion (!)
+  public Person!: Person; // publish your interface into html template
+  person: Person = { name: 'Simone' }; // the data
+
+  public readonly $ngAs = ngAs; // publish the helper into html template
 }
 ```
 

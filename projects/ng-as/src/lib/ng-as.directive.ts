@@ -1,4 +1,4 @@
-import { Directive, Input } from "@angular/core";
+import { Directive, Input } from '@angular/core';
 
 interface NgAsContext<T> {
   ngAs: T;
@@ -21,7 +21,6 @@ interface NgAsContext<T> {
  */
 @Directive({ selector: '[ngAs]', standalone: true })
 export class NgAsDirective<T> {
-
   /**
    * @description
    *
@@ -38,17 +37,15 @@ export class NgAsDirective<T> {
    */
   @Input({ required: true }) ngAs!: T;
 
-
   /**
    * Asserts the correct type of the context for the template that `NgAs` will render.
    *
    * The presence of this method is a signal to the Ivy template type-check compiler that the
    * `NgAs` structural directive renders its template with a specific context type.
-   * 
+   *
    * @see https://angular.dev/guide/directives/structural-directives#typing-the-directives-context
    */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  static ngTemplateContextGuard<T>(dir: NgAsDirective<T>, ctx: unknown): ctx is NgAsContext<T> {
+  static ngTemplateContextGuard<T>(_dir: NgAsDirective<T>, _ctx: unknown): _ctx is NgAsContext<T> {
     return true;
   }
 }
