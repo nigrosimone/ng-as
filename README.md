@@ -7,7 +7,7 @@ Angular pipe and directive for type casting template variables.
 Sometime there is a need to cast variable into component template as some type. 
 This library has pipe and directive for type casting template variables and improve IDE suggestion and refactoring.
 
-See the [stackblitz demo](https://stackblitz.com/edit/demo-ng-as?file=src%2Fapp%2Fapp.component.ts).
+See the [stackblitz demo](https://stackblitz.com/github/nigrosimone/ng-as/tree/main/examples/stackblitz), or its [sources](examples/stackblitz).
 
 
 ## Get Started
