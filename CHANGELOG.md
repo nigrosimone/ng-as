@@ -1,0 +1,102 @@
+# Changelog
+
+## 22.1.0 (2026-07-23)
+
+### 🚀 Features
+
+- angular 22 ([329b22e](https://github.com/nigrosimone/ng-as/commit/329b22e7d738ad060590c7be6c292e3b9bdce7f5))
+- remove zone.js ([38446f5](https://github.com/nigrosimone/ng-as/commit/38446f5c2e8647876f0b0d772ea9cb66819a6211))
+- angular 21 ([0b4de16](https://github.com/nigrosimone/ng-as/commit/0b4de168e27720ea5ca4bcb48e06527bfd44e52a))
+- angular 20 ([eef163f](https://github.com/nigrosimone/ng-as/commit/eef163f1045478916c0a9b76b130ae59f8fbf676))
+- migrate to standalone components and remove environment files ([fcd2456](https://github.com/nigrosimone/ng-as/commit/fcd24560de65e7d977027a204be1f30c62b39ace))
+- angular 19 ([8c92481](https://github.com/nigrosimone/ng-as/commit/8c92481764dbb3ee973b848892715878960bb8ca))
+- standalone ([739ee2e](https://github.com/nigrosimone/ng-as/commit/739ee2e8ba29ff15766212f42c3da8920d8f4837))
+- standalone ([d8c70c0](https://github.com/nigrosimone/ng-as/commit/d8c70c0e877710460dd54d5e4d7c2bba1ae1f485))
+
+### 🐛 Bug Fixes
+
+- types ([cde95eb](https://github.com/nigrosimone/ng-as/commit/cde95eb1ac4e5de1e9322b065952fcfb09c30316))
+- lint ([da1816b](https://github.com/nigrosimone/ng-as/commit/da1816b1cbcef1e08dfded11f0424c018f6cab97))
+- lint warning ([8df236b](https://github.com/nigrosimone/ng-as/commit/8df236ba80e7d6753e88eaac95e42f4986ea2248))
+
+### 📝 Documentation
+
+- improve ([28d2097](https://github.com/nigrosimone/ng-as/commit/28d20977a85676f3c1e4d1ea2b7ec96e8fdcabaa))
+- fix mat table ([364931b](https://github.com/nigrosimone/ng-as/commit/364931bc6836bc4bc294821467542630861f5a20))
+- standalone ([c927020](https://github.com/nigrosimone/ng-as/commit/c9270201100fc62a6d0d119459c8bbf62b738118))
+
+### 🧹 Chores
+
+- align tooling with ng-http-caching ([164d5ac](https://github.com/nigrosimone/ng-as/commit/164d5ac5e06c98278f83feac62b040ce1f22f88f))
+- bump version ([8b1b811](https://github.com/nigrosimone/ng-as/commit/8b1b811a15a62d84c71e7cdc0ee95244d5b10f7d))
+- better publish script ([2b91327](https://github.com/nigrosimone/ng-as/commit/2b91327f2f9675018541ea0f55010f6e60ceafe6))
+- update deps ([7905e72](https://github.com/nigrosimone/ng-as/commit/7905e72aa821a5a51928cb5cfcf0a1b9b677ab41))
+- readme ([5f6a8f7](https://github.com/nigrosimone/ng-as/commit/5f6a8f78507d97312093da3c80dba6d403ff2e14))
+- clean up ([340ef11](https://github.com/nigrosimone/ng-as/commit/340ef11d75ad03ebcd69c930d293c605458c688f))
+- update deps ([2fb90c8](https://github.com/nigrosimone/ng-as/commit/2fb90c8d6036e46f045d60ba2a4f846925773ae6))
+- optimize import ([00a50a5](https://github.com/nigrosimone/ng-as/commit/00a50a5d82d1377424da5d0bb77d40593d846fb4))
+- clean up ([8333457](https://github.com/nigrosimone/ng-as/commit/8333457857e30fae4ae148d0825bdc0b36688652))
+- clean up ([0189ebc](https://github.com/nigrosimone/ng-as/commit/0189ebc29744379fbd701888c270ed7664552aa4))
+- space ([23ab2d3](https://github.com/nigrosimone/ng-as/commit/23ab2d3059c715663af31b82a1d809039d120192))
+- update version to 20.0.1 in package.json ([d0b3c2b](https://github.com/nigrosimone/ng-as/commit/d0b3c2b0e3a969bb738225dba0157a4d35f0ef2b))
+
+### 📌 Other changes
+
+- 22.0.1 ([18a4797](https://github.com/nigrosimone/ng-as/commit/18a4797441c4fd1f3b99bd6ccfcafcde5e700b99))
+- 21 ([5fc135c](https://github.com/nigrosimone/ng-as/commit/5fc135c1bdb6b6d5ec17fcd4716af8428a684336))
+- 21.0.1 ([eb550f3](https://github.com/nigrosimone/ng-as/commit/eb550f349e41192165207457ebdf027a9956e831))
+- 20.0.1 ([d709fab](https://github.com/nigrosimone/ng-as/commit/d709fab3d4c863b73effa048cde79444aba40b42))
+- 19.0.1 ([88f539d](https://github.com/nigrosimone/ng-as/commit/88f539dcfcd6370d8d0ffe97bbfa1576c66f5cc8))
+- 19.0.1 ([12db931](https://github.com/nigrosimone/ng-as/commit/12db9316b65d6f8053d0483ad1f9445c755a7420))
+- 18.0.1 ([d78359c](https://github.com/nigrosimone/ng-as/commit/d78359cb6eed7e8ea53a79b81ab7d99be54f33b3))
+- 18.0.1 ([f8a0652](https://github.com/nigrosimone/ng-as/commit/f8a0652787546485e7c5d5b9ad3c150e7016d3d6))
+- Angular 18 ([19d30d9](https://github.com/nigrosimone/ng-as/commit/19d30d9e8e699090d18dc826ad47b7d7d33615e1))
+- 17.0.1 ([b964e6e](https://github.com/nigrosimone/ng-as/commit/b964e6ed731c3753d58f7b258c44c8eae4afa601))
+- 17.0.1 ([5254630](https://github.com/nigrosimone/ng-as/commit/52546305203aa79740cc4293ea7c224d30ee7e1e))
+- up ([35000a7](https://github.com/nigrosimone/ng-as/commit/35000a770360d1e68568e9cb0489c7d247cf26e8))
+- update deps ([6d10866](https://github.com/nigrosimone/ng-as/commit/6d10866607e7e5772dcace978975c1193dda3b3e))
+- Angular 17 ([251be42](https://github.com/nigrosimone/ng-as/commit/251be423b4073ecdc00988d2477aa21bc8d6b183))
+- 16.0.1 ([d09c61f](https://github.com/nigrosimone/ng-as/commit/d09c61fe598462457fadcd73363b0f98a965d823))
+- 16.0.1 ([b3ddbd2](https://github.com/nigrosimone/ng-as/commit/b3ddbd27eef3c16aedb9141ad5189834ba2ae7a9))
+- Angular 16 ([758f603](https://github.com/nigrosimone/ng-as/commit/758f6039ab33909bba7e7701baf7061bba825316))
+- lint fix ([99823ab](https://github.com/nigrosimone/ng-as/commit/99823ab063eb2f0c43e4420c8c12a85e142373e4))
+- 15.0.2 ([e15c455](https://github.com/nigrosimone/ng-as/commit/e15c455edc23653e14a4a14df3a0cf5b7b17633c))
+- 15.0.2 ([93bd9cc](https://github.com/nigrosimone/ng-as/commit/93bd9cc2b3ea1b0fda0a63ff81da693dfc3e703e))
+- fix type ([eca1015](https://github.com/nigrosimone/ng-as/commit/eca10159597a6c477d4f98e74a6b1a55e358e424))
+- 15.0.1 ([c945a28](https://github.com/nigrosimone/ng-as/commit/c945a2879678960b8384ae84c4086eb7f26050df))
+- 15.0.1 ([a9181e0](https://github.com/nigrosimone/ng-as/commit/a9181e09b9db649a2bd2f3e9bb98b3bc71031399))
+- Angular 15 ([db6192e](https://github.com/nigrosimone/ng-as/commit/db6192eea94fe415358ccb8cc21fd57dcde9eaf6))
+- Create FUNDING.yml ([47b8790](https://github.com/nigrosimone/ng-as/commit/47b87908693132a036e7f58d4fee5a3a9ca3559d))
+- docs ([2bab855](https://github.com/nigrosimone/ng-as/commit/2bab85532688bbbc6c5bcfab6598fe3e100ad72f))
+- docs ([82bf04e](https://github.com/nigrosimone/ng-as/commit/82bf04e5e1d306307dc4a84a0a95b5209ebea887))
+- up ([0aeff88](https://github.com/nigrosimone/ng-as/commit/0aeff885daff39e6f0c2fcf087ab0868485f7d32))
+- no cast ([93f2189](https://github.com/nigrosimone/ng-as/commit/93f2189c672fdd38c88b47f2da3fbe19ad1b642c))
+- up ([615b6cd](https://github.com/nigrosimone/ng-as/commit/615b6cd81c969a701634ad5c6b79b05e8be405d0))
+- better example ([8458f8a](https://github.com/nigrosimone/ng-as/commit/8458f8ac19728a69a4a914a61d9a95e9f0e69d1e))
+- 14.0.2 ([a787242](https://github.com/nigrosimone/ng-as/commit/a7872426826247b1e7148a21218d550a602a269f))
+- 14.0.2 ([809cf89](https://github.com/nigrosimone/ng-as/commit/809cf8946984adfa05adc463896a820103221103))
+- Add directive ([f2a93fc](https://github.com/nigrosimone/ng-as/commit/f2a93fc6979c322519083c259ff07467a6a032e6))
+- 14.0.1 ([2c753b1](https://github.com/nigrosimone/ng-as/commit/2c753b1a2cda63379fbc0b8ef0f223e251c1c7ed))
+- 14.0.1 ([251b6e9](https://github.com/nigrosimone/ng-as/commit/251b6e91be758d25a5e666642a344969532f566d))
+- Angular 14 ([df0897b](https://github.com/nigrosimone/ng-as/commit/df0897b4dc50a9d0316bcc8dad5a86f24ad37138))
+- 13.0.5 ([a94ab95](https://github.com/nigrosimone/ng-as/commit/a94ab95705dfa5079c59fa482efe66d2b319be5d))
+- 13.0.5 ([22f6428](https://github.com/nigrosimone/ng-as/commit/22f64284829be734f9d597fd83b3e3a5bc449c44))
+- update deps ([6aa5128](https://github.com/nigrosimone/ng-as/commit/6aa512857d23fafb535f345380ec689068ac6f15))
+- fix karma ([25e8801](https://github.com/nigrosimone/ng-as/commit/25e8801bb0af496d901962705ad551483866f3bf))
+- update deps ([cee0481](https://github.com/nigrosimone/ng-as/commit/cee0481b1a3580104ca6be01d9a20034a75a3f9c))
+- Fix example ([5ceba6a](https://github.com/nigrosimone/ng-as/commit/5ceba6a878ec1171dd6734efaac410071c7f9947))
+- 13.0.4 ([c4a7923](https://github.com/nigrosimone/ng-as/commit/c4a7923d7da8d44ccd6a9c9ef286630c17fed372))
+- 13.0.4 ([3b160af](https://github.com/nigrosimone/ng-as/commit/3b160af7d0dd1b9cb9bffd24ca30b351aa3f77a1))
+- fix example ([01d090c](https://github.com/nigrosimone/ng-as/commit/01d090c662c6e4f0c15905e063e717faeabbccaf))
+- 13.0.3 ([d32159b](https://github.com/nigrosimone/ng-as/commit/d32159b261a15a6faa86ea93009732dd1bb8b846))
+- 13.0.3 ([af9c097](https://github.com/nigrosimone/ng-as/commit/af9c097a9b298bec3d8770b5e5b281d79931fb07))
+- docs ([9d640fa](https://github.com/nigrosimone/ng-as/commit/9d640fa23e617262c0c0f8cc6825340bc1c6185f))
+- 13.0.2 ([df3aa12](https://github.com/nigrosimone/ng-as/commit/df3aa12b8f783d51afda8f3754ac0a6a05ee28ed))
+- 13.0.2 ([8047d0b](https://github.com/nigrosimone/ng-as/commit/8047d0b1a7cfda7742f31deaad2c9d6789028997))
+- docs ([2802c7f](https://github.com/nigrosimone/ng-as/commit/2802c7fbccea107474d9d6eb71b24d23a990d5bc))
+- 13.0.1 ([9f0147a](https://github.com/nigrosimone/ng-as/commit/9f0147a714936708f403725fb1d4ad0540a4520f))
+- 13.0.1 ([77f9d06](https://github.com/nigrosimone/ng-as/commit/77f9d060b3bba41e64814b133aac794f5aaad205))
+- first commit ([5a14892](https://github.com/nigrosimone/ng-as/commit/5a148925d69569476945e710095766eacf4b2761))
+- Initial commit ([c72203f](https://github.com/nigrosimone/ng-as/commit/c72203f2daef2558b1563f62bf1bd497ac1b1885))
+
+**Full Changelog**: https://github.com/nigrosimone/ng-as/commits/v22.1.0
