@@ -80,6 +80,24 @@ export class AppComponent {
 }
 ```
 
+The pipe is registered under two names, `as` and `ngAs`. They are the same pipe: `as` is shorter,
+`ngAs` follows the prefixed convention and avoids clashing with another library that also exposes
+an `as` pipe. Import `NgAsPipe` for `as`, `NgAsAliasPipe` for `ngAs`, or `NgAsModule` for both:
+
+```ts
+import { NgAsAliasPipe } from 'ng-as';
+
+@Component({
+  selector: 'app-root',
+  imports: [NgAsAliasPipe],
+  template: `
+  <ng-template #personTemplate let-person>
+    <span>Hello {{ (person | ngAs: Person).name }}!</span>
+  </ng-template>
+  `,
+})
+```
+
 type casting template variables with the plain `ngAs()` function eg. (nothing to import into `imports`):
 
 ```ts

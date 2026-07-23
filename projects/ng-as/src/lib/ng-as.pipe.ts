@@ -34,3 +34,23 @@ export class NgAsPipe implements PipeTransform {
     return input as T;
   }
 }
+
+/**
+ * @description
+ *
+ * `ngAs` is the prefixed name of the {@link NgAsPipe} `as` pipe: same behaviour, same
+ * arguments, only the template name differs. `as` is short but it is a global,
+ * collision-prone name; reach for this one when it clashes with another library or
+ * when you prefer the prefixed convention.
+ *
+ * @usageNotes
+ *
+ * ### Usage
+ *
+ * ```html
+ * <ng-container *ngTemplateOutlet="testTemplate; context: {$implicit: test}"></ng-container>
+ * <ng-template #testTemplate let-test><div>{{(test | ngAs:Test).x}}</div></ng-template>
+ * ```
+ */
+@Pipe({ name: 'ngAs', pure: true, standalone: true })
+export class NgAsAliasPipe extends NgAsPipe implements PipeTransform {}

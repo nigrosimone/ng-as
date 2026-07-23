@@ -7,7 +7,14 @@
     "url": "git+https://github.com/nigrosimone/ng-as.git"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "pipe",
+    "directive",
+    "cast",
+    "type",
+    "typing",
+    "template",
+    "typescript"
   ],
   "author": "Simone Nigro <nigro.simone@gmail.com>",
   "license": "MIT",
@@ -16,8 +23,7 @@
   },
   "homepage": "https://github.com/nigrosimone/ng-as",
   "peerDependencies": {
-    "@angular/common": ">15.0.0",
-    "@angular/core": ">15.0.0"
+    "@angular/core": ">=16.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
